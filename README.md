@@ -1,6 +1,5 @@
-# AmazonQLDB Samples
+# AmazonQLDB FABCAR POC
 
-The samples in this project demonstrate several uses of Amazon QLDB.
 
 ## Requirements
 
@@ -31,22 +30,52 @@ detail to install Java 8 and information on Gradle:
 * [Gradle]()
 * [Gradle Wrapper](https://docs.gradle.org/3.3/userguide/gradle_wrapper.html)
 
-# Running the Sample code
+# Running the Application
 
-The sample code creates a ledger with tables and indexes, and inserts some documents into those tables,
-among other things. Each of the examples in this project can be run in the following way:
-
-Windows:
-
-```
-gradlew run -Dtutorial=CreateLedger
-```
-
-Unix:
+1). Create fabcar Ledger
 
 ```
 ./gradlew run -Dtutorial=CreateLedger
 ```
 
-The above example will build the CreateLedger class with the necessary dependencies and create a ledger named:
-`vehicle-registration`. You may run other examples after creating a ledger.
+2). List the ledgers available
+
+```
+./gradlew run -Dtutorial=ListLedgers
+```
+
+3). Create Cars table in ledger
+
+```
+./gradlew run -Dtutorial=CreateTable
+```
+
+4). Create Index "CarId" on Cars Table
+
+```
+./gradlew run -Dtutorial=CreateIndex
+```
+
+5). Insert Sample data to the ledger
+
+```
+./gradlew run -Dtutorial=InsertDocument
+```
+
+5). List cars available in ledger
+
+```
+./gradlew run -Dtutorial=ListAllCars
+```
+
+6). Transfer car from 'Alice' from 'Teja' for Car ID = "IN001"
+
+```
+./gradlew run -Dtutorial=AssignNewOwner
+```
+
+7). Check the car history for Car ID = "IN001"
+
+```
+./gradlew run -Dtutorial=CheckCarHistory
+```
